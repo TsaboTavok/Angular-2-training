@@ -9,7 +9,7 @@
       <div class="col-md-6">
           <app-product></app-product>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" *ngIf="showCart()">
            <app-cart></app-cart>
       </div>
     </div>

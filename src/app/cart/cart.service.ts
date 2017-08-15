@@ -29,4 +29,8 @@ export class CartService {
     public getItems(): Observable<CartItem[]> {
         return this.itemsInCartSubject;
     }
+
+    public isEmpty(): boolean {
+        return this.itemsInCart.length == 0
+    }
 }
