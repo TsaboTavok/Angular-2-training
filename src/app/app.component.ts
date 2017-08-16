@@ -1,6 +1,5 @@
 import { CartService } from './cart/cart.service';
 import { Component } from '@angular/core';
-import { CategoryEnum } from "./common/enums/category.enum";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,12 @@ import { CategoryEnum } from "./common/enums/category.enum";
 })
 export class AppComponent {
 
-  title = 'the shop';  
+  title = 'the shop';
 
-	constructor(private _cartService: CartService) {
+  constructor(private _cartService: CartService) {
   }
-  
-  showCart() : boolean{
+
+  showCart(): boolean {
     return !this._cartService.isEmpty();
   }
 }

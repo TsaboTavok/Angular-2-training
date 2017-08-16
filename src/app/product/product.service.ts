@@ -7,12 +7,12 @@ export class ProductService {
 
   constructor() { }
 
-  public getProduct() : Product  {
-    return  new Product( "Pizza",
-    "Ingredients on a round bread"
+  public getProduct(): Product  {
+    return  new Product( 'Pizza',
+    'Ingredients on a round bread'
    , 15.99
    , CategoryEnum.Food
    , true,
-   ["Tomatoes","Pepperoni","Mozzarella"]);
+   ['Tomatoes', 'Pepperoni', 'Mozzarella']);
   }
 }
