@@ -1,4 +1,10 @@
+<span #mainSpan>
 <input type="number"  [(ngModel)]="item.count">
+<!-- <span [ngStyle]='{"color": item.longDelivery ? "red" : "black"}'> -->
+<span [ngStyle]='textStyle'>
 {{item.count}} x {{item.product.name}} = {{item.count * item.product.price}}$
-<button class='btn  btn-danger' (click)='deleteItem()'>X</button>
-
+<span>
+<button id='btnDelete'
+class='btn  btn-danger' 
+(click)='deleteItem()' >X</button>
+</span>

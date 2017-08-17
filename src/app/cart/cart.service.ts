@@ -2,14 +2,15 @@ import { Product } from './../product/product.model';
 import { Injectable } from '@angular/core';
 import { CartItem } from './cart-item/cart-item.model';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
+import { CategoryEnum } from '../common/enums/category.enum';
 
 @Injectable()
 export class CartService {
 
 
     private itemsInCart: CartItem[] = [
-        // new CartItem(
-        //     new Product("Default_5$_Product","",5,CategoryEnum.Beverage,true,[]), 2)
+         new CartItem(
+             new Product('Default_5$_Product', '', 5, CategoryEnum.Beverage, true, []), 2)
         ];
 
     private itemsInCartSubject: BehaviorSubject<CartItem[]> = new BehaviorSubject(this.itemsInCart);
@@ -33,5 +34,21 @@ export class CartService {
 
     public isEmpty(): boolean {
         return this.itemsInCart.length === 0;
+    }
+
+    getTotalGoods(): Observable<number> {
+      return this.itemsInCartSubject.map((items: CartItem[]) => {
+        return items.reduce((prev, curr: CartItem) => {
+          return prev + +curr.count;
+        }, 0);
+      });
+    }
+
+    getTotalPrice(): Observable<number> {
+        return this.itemsInCartSubject.map((items: CartItem[]) => {
+          return items.reduce((prev, curr: CartItem) => {
+            return prev + curr.count * curr.product.price;
+        }, 0);
+      });
     }
 }

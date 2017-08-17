@@ -18,4 +18,10 @@ export class CartListComponent implements OnInit {
     this.items$ = this._cartService.getItems();
     this.items$.subscribe(_ => this.items = _);
   }
+  getTotalGoods(): Observable<number> {
+    return this._cartService.getTotalGoods();
+  }
+  getTotalPrice(): Observable<number> {
+    return this._cartService.getTotalPrice();
+  }
 }

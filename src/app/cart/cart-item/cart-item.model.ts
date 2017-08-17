@@ -9,6 +9,6 @@ export class CartItem implements ICartItem {
         public count: number,
         longDelivery?: boolean,
     ) {
-        this.longDelivery = longDelivery || false;
+        this.longDelivery = longDelivery || count > 10 ? true : false;
     }
   }
