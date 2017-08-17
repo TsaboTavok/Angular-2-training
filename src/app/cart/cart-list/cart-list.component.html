@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Cart:</div>
+  <div class="panel-body">
+  <ul>    
+      <li *ngFor="let i of items">
+        <app-cart-item [item]="i"></app-cart-item>
+      </li>
+  </ul>
+  </div>
+</div>

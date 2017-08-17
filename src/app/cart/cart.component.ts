@@ -11,13 +11,9 @@ import { Observable } from 'rxjs/Rx';
 })
 export class CartComponent implements OnInit {
 
-  items$: Observable<CartItem[]>;
-  items: CartItem[] = [];
 
   constructor(private _cartService: CartService) { }
 
   ngOnInit() {
-    this.items$ = this._cartService.getItems();
-    this.items$.subscribe(_ => this.items = _);
   }
 }
