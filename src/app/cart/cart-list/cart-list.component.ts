@@ -1,7 +1,7 @@
 import { CartService } from './../cart.service';
 import { CartItem } from './../cart-item/cart-item.model';
 import { Observable } from 'rxjs/Rx';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cart-list',
@@ -11,6 +11,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartListComponent implements OnInit {
   items$: Observable<CartItem[]>;
   items: CartItem[] = [];
+  @Output() onOrder: EventEmitter<string> = new EventEmitter<string>();
+  orderClickCount = 1;
 
   constructor(private _cartService: CartService) { }
 
@@ -23,5 +25,8 @@ export class CartListComponent implements OnInit {
   }
   getTotalPrice(): Observable<number> {
     return this._cartService.getTotalPrice();
+  }
+  order() {
+    this.onOrder.emit('Order requested ' + this.orderClickCount++);
   }
 }

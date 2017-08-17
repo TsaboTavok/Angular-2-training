@@ -9,11 +9,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'the shop';
+  orderMessage = 'No order';
 
   constructor(private _cartService: CartService) {
   }
 
   showCart(): boolean {
     return !this._cartService.isEmpty();
+  }
+
+  onOrderHandler(msg: string) {
+    this.orderMessage = msg;
   }
 }
