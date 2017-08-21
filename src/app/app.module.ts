@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
+import { AppInfoService, RandomStringService } from './common';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { ProductComponent } from './product/product.component';
     CartModule,
     ProductModule
   ],
-  providers: [],
+  providers: [
+    AppInfoService,
+    { provide: RandomStringService, useValue: new RandomStringService(5)}
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
