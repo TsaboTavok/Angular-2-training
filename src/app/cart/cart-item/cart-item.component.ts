@@ -48,11 +48,11 @@ export class CartItemComponent implements OnInit, DoCheck {
 
   @HostListener('mouseenter') enter() {
     this.hostBack = 'grey';
-    (<HTMLSpanElement>this.mainSpan.nativeElement).style.border = 'double' 
+    (<HTMLSpanElement>this.mainSpan.nativeElement).style.border = 'double';
   }
 
   @HostListener('mouseleave') leave() {
     this.hostBack = 'transparent';
-    (<HTMLSpanElement>this.mainSpan.nativeElement).style.border = 'none'     
+    (<HTMLSpanElement>this.mainSpan.nativeElement).style.border = 'none';
   }
 }
