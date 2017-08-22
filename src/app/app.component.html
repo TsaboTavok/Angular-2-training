@@ -13,7 +13,12 @@
            <app-cart-list  (onOrder)='onOrderHandler($event)'></app-cart-list>
       </div>
     </div>
-<div>
-<div appBorder="2px dashed olive">
-  {{orderMessage}}
+</div>
+<div class="container">
+  <div appBorder="2px dashed olive" class="col-md-6">
+    {{orderMessage}}
+  </div>
+  <div class="col-md-6">
+      <app-settings-form></app-settings-form>
+  </div>
 </div>

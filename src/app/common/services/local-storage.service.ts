@@ -5,12 +5,12 @@ export class LocalStorageService {
 
     constructor() { }
 
-    setValue(key: string, val: string) {
-        localStorage.setItem(key, val);
+    setValue(key: string, val: any) {
+        localStorage.setItem(key, JSON.stringify(val));
     }
 
-    getValue(key: string): string {
-        return localStorage.getItem(key);
+    getValue<T>(key: string): T {
+        return <T>JSON.parse(localStorage.getItem(key));
     }
 
     removeValue(key: string) {

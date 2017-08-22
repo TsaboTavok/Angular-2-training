@@ -1,3 +1,4 @@
+import { SettingsModule } from './settings/settings.module';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import { CartService } from './cart/cart.service';
@@ -10,7 +11,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { AppInfoService, RandomStringService,
-  LocalStorageService,
+  LocalStorageService, SettingsService,
   BorderDirective} from './common';
 
 const stringServce = new RandomStringService(5);
@@ -25,12 +26,14 @@ const stringServce = new RandomStringService(5);
     BrowserModule,
     FormsModule,
     CartModule,
-    ProductModule
+    ProductModule,
+    SettingsModule
   ],
   providers: [
     AppInfoService,
     LocalStorageService,
-    { provide: RandomStringService, useValue: stringServce}
+    SettingsService,
+    // { provide: RandomStringService, useValue: stringServce }
     ],
   bootstrap: [AppComponent]
 })
