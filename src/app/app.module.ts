@@ -9,11 +9,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import { AppInfoService, RandomStringService } from './common';
+import { AppInfoService, RandomStringService,
+  LocalStorageService,
+  BorderDirective} from './common';
+
+const stringServce = new RandomStringService(5);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BorderDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +29,8 @@ import { AppInfoService, RandomStringService } from './common';
   ],
   providers: [
     AppInfoService,
-    { provide: RandomStringService, useValue: new RandomStringService(5)}
+    LocalStorageService,
+    { provide: RandomStringService, useValue: stringServce}
     ],
   bootstrap: [AppComponent]
 })
