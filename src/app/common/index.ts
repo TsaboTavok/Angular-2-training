@@ -1,7 +1,6 @@
 export { Settings } from './models/settings.model';
 
-export { AppInfoService } from './services/app-info.service';
-export { RandomStringService } from './services/random-string.service';
+export { RandomStringFactory } from './services/random-string.factory';
 export { LocalStorageService } from './services/local-storage.service';
 export { SettingsService } from './services/settings.service';
 

@@ -10,11 +10,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import { AppInfoService, RandomStringService,
+import { RandomStringFactory,
   LocalStorageService, SettingsService,
   BorderDirective} from './common';
+  import { APP_INFO, RANDOM_STRING_5 } from './common/tokens';
 
-const stringServce = new RandomStringService(5);
 
 @NgModule({
   declarations: [
@@ -30,10 +30,10 @@ const stringServce = new RandomStringService(5);
     SettingsModule
   ],
   providers: [
-    AppInfoService,
     LocalStorageService,
     SettingsService,
-    // { provide: RandomStringService, useValue: stringServce }
+    { provide: APP_INFO, useValue: { App: 'Pizza Store', Version: '0.3 beta'} },
+    { provide: RANDOM_STRING_5, useFactory:  RandomStringFactory(5), deps: [] }
     ],
   bootstrap: [AppComponent]
 })

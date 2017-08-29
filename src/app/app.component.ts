@@ -1,6 +1,6 @@
+import { APP_INFO, RANDOM_STRING_5 } from './common/tokens';
 import { CartService } from './cart/cart.service';
-import { Component, OnInit, Optional } from '@angular/core';
-import { AppInfoService, RandomStringService } from './common/';
+import { Component, OnInit, Optional, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +14,14 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _cartService: CartService,
-    private _appInfo: AppInfoService,
-    @Optional() private _rand: RandomStringService
+    @Inject(APP_INFO)private _appInfo: any,
+    @Optional()@Inject(RANDOM_STRING_5) private _rand: string
   ) {
   }
 
   ngOnInit(): void {
-    const extra = this._rand ? ' ' + this._rand.getString() : '';
-    this.title = (<any>this._appInfo.getAppInfo()).App +  extra;
+    const extra = this._rand ? ' ' + this._rand : '';
+    this.title = this._appInfo.App +  extra;
   }
 
   showCart(): boolean {
