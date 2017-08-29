@@ -1,3 +1,4 @@
+
 import { SettingsModule } from './settings/settings.module';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
@@ -32,7 +33,7 @@ import { RandomStringFactory,
   providers: [
     LocalStorageService,
     SettingsService,
-    { provide: APP_INFO, useValue: { App: 'Pizza Store', Version: '0.3 beta'} },
+    { provide: APP_INFO, useValue: { App: 'pizza store', Version: '0.3 beta'} },
     { provide: RANDOM_STRING_5, useFactory:  RandomStringFactory(5), deps: [] }
     ],
   bootstrap: [AppComponent]

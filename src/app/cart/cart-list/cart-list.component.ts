@@ -2,6 +2,7 @@ import { CartService } from './../cart.service';
 import { CartItem } from './../cart-item/cart-item.model';
 import { Observable } from 'rxjs/Rx';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { OrderByPipe } from '../../common/index';
 
 @Component({
   selector: 'app-cart-list',

@@ -2,7 +2,7 @@
   <div class="panel-heading">Cart:</div>
   <div class="panel-body">
   <ul>    
-      <li *ngFor="let i of items">
+      <li *ngFor="let i of items | orderBy:'count'">
         <app-cart-item [item]="i"></app-cart-item>
       </li>
   </ul>

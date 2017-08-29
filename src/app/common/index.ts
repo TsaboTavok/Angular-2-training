@@ -5,3 +5,5 @@ export { LocalStorageService } from './services/local-storage.service';
 export { SettingsService } from './services/settings.service';
 
 export { BorderDirective } from './directives/border.directive';
+
+export { OrderByPipe } from './pipes/order-by.pipe';

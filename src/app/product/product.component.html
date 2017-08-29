@@ -4,9 +4,9 @@
   <br>
   Description - {{product.description}}
   <br>
-  Price - {{product.price}}
+  Price - {{product.price | currency:'USD':'true'}}
   <br>
-  Category - {{categoryType[product.category]}}
+  Category - {{categoryType[product.category] | uppercase}}
   <br>
   Available - {{product.isAvailable}}
   <br>
