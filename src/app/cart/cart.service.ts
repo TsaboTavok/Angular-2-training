@@ -32,6 +32,10 @@ export class CartService {
         this.itemsInCartSubject.next(newItems);
     }
 
+    public clear() {
+        this.itemsInCartSubject.next(new Array<CartItem>());
+    }
+
     public isEmpty(): boolean {
         return this.itemsInCart.length === 0;
     }

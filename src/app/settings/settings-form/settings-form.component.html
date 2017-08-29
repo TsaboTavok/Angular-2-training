@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+<div class="panel-heading">
+    <h4 class="pannel-title">
+        Settings Form
+    </h4>
+</div>
+<div class="panel-body">
+    <form *ngIf="settings" (ngSubmit)="saveSettings()" id="task-form">
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text"
+            class="form-control"
+            id="login" name="login"
+            placeholder="login"
+            required
+            [(ngModel)]="settings.login">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text"
+            class="form-control"
+            id="email" name="email"
+            placeholder="email"
+            [(ngModel)]="settings.email">
+      </div>
+      <button
+          type="submit"
+          class="btn btn-primary"
+          form="task-form">Save
+      </button>
+      <button
+          class="btn btn-primary"
+          (click)="clearSettings()">Clear
+      </button>
+    </form>
+</div>

@@ -1,3 +1,4 @@
+import { SettingsModule } from './settings/settings.module';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import { CartService } from './cart/cart.service';
@@ -9,19 +10,31 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
+import { RandomStringFactory,
+  LocalStorageService, SettingsService,
+  BorderDirective} from './common';
+  import { APP_INFO, RANDOM_STRING_5 } from './common/tokens';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BorderDirective
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     CartModule,
-    ProductModule
+    ProductModule,
+    SettingsModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageService,
+    SettingsService,
+    { provide: APP_INFO, useValue: { App: 'Pizza Store', Version: '0.3 beta'} },
+    { provide: RANDOM_STRING_5, useFactory:  RandomStringFactory(5), deps: [] }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
