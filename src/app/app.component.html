@@ -10,7 +10,8 @@
           <app-product></app-product>
       </div>
       <div class="col-md-6" *ngIf="showCart()">
-           <app-cart></app-cart>
+           <app-cart-list  (onOrder)='onOrderHandler($event)'></app-cart-list>
       </div>
     </div>
 <div>
+  {{orderMessage}}

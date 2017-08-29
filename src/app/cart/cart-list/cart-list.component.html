@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Cart:</div>
+  <div class="panel-body">
+  <ul>    
+      <li *ngFor="let i of items">
+        <app-cart-item [item]="i"></app-cart-item>
+      </li>
+  </ul>
+  </div>
+  <div class="panel-footing"> 
+    Total goods {{getTotalGoods()|async}} = {{getTotalPrice()|async|currency:USD:true}} 
+    <button (click)='order()'> Order! </button>
+  </div>
+</div>
