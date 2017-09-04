@@ -15,3 +15,7 @@ Pipes usage
 2) Prices
 3) Async pipes for cart
 4) Order by pipe to sort cart by item count
+
+
+Task5:
+Created routing for 

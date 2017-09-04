@@ -1,3 +1,4 @@
+import { CartRoutingModule } from './cart.routing.module';
 import { FormsModule } from '@angular/forms';
 import { CartService } from './cart.service';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { OrderByPipe } from '../common/index';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    CartRoutingModule
   ],
   exports: [
     CartListComponent

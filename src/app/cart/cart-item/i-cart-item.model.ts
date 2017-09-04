@@ -1,4 +1,4 @@
-import { Product } from './../../product/product.model';
+import { Product } from '../../common';
 
 export interface ICartItem {
     product: Product;

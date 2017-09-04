@@ -1,4 +1,4 @@
-import { Product } from './../product/product.model';
+import { Product } from './../common';
 import { Injectable } from '@angular/core';
 import { CartItem } from './cart-item/cart-item.model';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
@@ -10,7 +10,7 @@ export class CartService {
 
     private itemsInCart: CartItem[] = [
          new CartItem(
-             new Product('Default_5$_Product', '', 5, CategoryEnum.Beverage, true, []), 2)
+             new Product(-1, 'Default_5$_Product', '', 5, CategoryEnum.Beverage, true, []), 2)
         ];
 
     private itemsInCartSubject: BehaviorSubject<CartItem[]> = new BehaviorSubject(this.itemsInCart);

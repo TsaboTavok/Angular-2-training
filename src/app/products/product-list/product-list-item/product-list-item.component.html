@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<ul>
+			<li>FirtsName: {{product.name}}</li>
+			<li>LastName: {{product.price | currency:'USD':'true'}}</li>
+		</ul>
+		<button class="btn btn-warning btn-sm"
+			(click)="selectProduct()">
+			View
+		</button>
+		<button class="btn btn-warning btn-sm"
+			(click)="editUser()">
+			Edit
+		</button>
+	</div>
+</div>

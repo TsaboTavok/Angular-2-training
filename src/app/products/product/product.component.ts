@@ -1,11 +1,11 @@
-import {CartService} from '../cart/cart.service';
+import { CartService } from '../../cart/cart.service';
 import { ProductService } from './product.service';
-import { Product } from './product.model';
-import {CategoryEnum} from '../common/enums/category.enum';
+import { Product } from './../../common';
+import { CategoryEnum } from '../../common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
@@ -15,11 +15,15 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private _productService: ProductService,
-  private _cartService: CartService) {
+    private _cartService: CartService,
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit() {
-    this.product = this._productService.getProduct();
+    this.route.data.forEach((data: { product: Product }) => {
+      this.product = Object.assign({}, data.product);
+    });
   }
 
   addToCart(count: number) {

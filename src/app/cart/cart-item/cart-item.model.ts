@@ -1,5 +1,5 @@
 import { ICartItem } from './i-cart-item.model';
-import { Product } from '../../product/product.model';
+import { Product } from '../../common';
 
 export class CartItem implements ICartItem {
     public longDelivery: boolean;
