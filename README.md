@@ -18,4 +18,10 @@ Pipes usage
 
 
 Task5:
-Created routing for 
+Created routing for Cart, Products and Admin
+Used gaurds to protect Admin.
+Started using localstorage for Products.
+TODO: 
+1) Finish admin area to create and edit products
+2) Hide Edit button for non-admins
+

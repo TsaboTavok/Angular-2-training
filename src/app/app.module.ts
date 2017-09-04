@@ -1,3 +1,4 @@
+import { AuthGuard } from './common/guards/auth.guard';
 import { AdminModule } from './admin/admin.module';
 import { ProductsModule } from './products/products.module';
 import { AuthService } from './common/services/auth.service';
@@ -40,6 +41,7 @@ import { RandomStringFactory,
     LocalStorageService,
     SettingsService,
     AuthService,
+    AuthGuard,
     { provide: APP_INFO, useValue: { App: 'pizza store', Version: '0.3 beta'} },
     { provide: RANDOM_STRING_5, useFactory:  RandomStringFactory(5), deps: [] }
     ],
